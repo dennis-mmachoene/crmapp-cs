@@ -1,0 +1,100 @@
+@page
+@model crmapp.Pages.Customers.Create
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-4">
+        <h2 class="text-center mb-5">
+            New Customer
+        </h2>
+
+        @if (Model.ErrorMessage.Length > 0)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>@Model.ErrorMessage</strong>
+                <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+        <form method="post">
+            <div class="row mb-3">
+                <label for="First Name" class="cols-sm-4 col-form-label">First Name
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="cols-sm-8">
+                    <input type="text" asp-for="Firstname" class="form-control">
+                    <span class="text-danger" asp-validation-for="Firstname"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Last Name" class="cols-sm-4 col-form-label">Last Name
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="cols-sm-8">
+                    <input type="text" asp-for="Lastname" class="form-control">
+                    <span class="text-danger" asp-validation-for="Lastname"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Email" class="cols-sm-4 col-form-label">Email
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="cols-sm-8">
+                    <input type="text" asp-for="Email" class="form-control">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Phone" class="cols-sm-4 col-form-label">Phone</label>
+                <div class="cols-sm-8">
+                    <input type="text" asp-for="Phone" class="form-control">
+                    <span class="text-danger" asp-validation-for="Phone"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Address" class="cols-sm-4 col-form-label">Address</label>
+                <div class="cols-sm-8">
+                    <input type="text" asp-for="Address" class="form-control">
+                    <span class="text-danger" asp-validation-for="Address"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Company" class="cols-sm-4 col-form-label">Company
+                    <span class="text-danger">*</span>
+                </label>
+                <div class="cols-sm-8">
+                    <input type="text" asp-for="Company" class="form-control">
+                    <span class="text-danger" asp-validation-for="Company"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="Notes" class="cols-sm-4 col-form-label">Notes
+                   
+                </label>
+                <div class="cols-sm-8">
+                    <textarea asp-for="Notes" class="form-control"></textarea>
+                    <span class="text-danger" asp-validation-for="Notes"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <a href="/Customers/Index" class="btn btn-outline-primary">
+                        Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

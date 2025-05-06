@@ -18,7 +18,7 @@ namespace crmapp.Pages.Customers
         {
             try
             {
-                string connectionString = "Server=.;Database=crmdb;Trusted_Connection=True;TrustServerCertificate=True;";
+                string connectionString = "Server=ZDAWOOD-NB3\\SQLEXPRESS;Database=crmdb;Trusted_Connection=True;TrustServerCertificate=True;";
                 using (SqlConnection connection = new SqlConnection(connectionString)){
                     connection.Open();
 
